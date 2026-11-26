@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moréa By Tatiana López | Aceite Bronceador de Café</title>
-  <meta name="description" content="Logra un bronceado dorado, natural y luminoso con el Aceite Bronceador de Café Moréa. Fórmula con 6 aceites naturales y Vitamina E." />
-  
+  <title>Moréa | By Tatiana López — Bronceador de Café 200 ml</title>
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome Icons -->
+
+  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <script>
@@ -23,17 +22,17 @@
         extend: {
           colors: {
             morea: {
-              cream: '#FDF8F2',
-              sand: '#F5E8D7',
-              gold: '#D98A2B',
-              amber: '#B86614',
-              coffee: '#3B2314',
-              caramel: '#7A4928',
+              bg: '#FAF6F0',
+              surface: '#F2E7D8',
+              ink: '#2D1B10',
+              muted: '#6E4A32',
+              gold: '#C87D28',
+              goldDark: '#9E5B12'
             }
           },
           fontFamily: {
             serif: ['"Playfair Display"', 'serif'],
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
           }
         }
       }
@@ -41,502 +40,243 @@
   </script>
 
   <style>
-    .gold-gradient {
-      background: linear-gradient(135deg, #E59B38 0%, #B86614 100%);
-    }
-    .pulse-ws {
-      animation: pulse-green 2s infinite;
-    }
-    @keyframes pulse-green {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    .btn-gold {
+      background: linear-gradient(135deg, #D98A2B 0%, #9E5B12 100%);
     }
   </style>
 </head>
-<body class="bg-morea-cream text-morea-coffee font-sans antialiased selection:bg-morea-gold selection:text-white">
+<body class="bg-morea-bg text-morea-ink font-sans antialiased">
 
-  <!-- BARRA SUPERIOR DE URGENCIA + CRONÓMETRO -->
-  <div class="sticky top-0 z-50 bg-morea-coffee text-white shadow-md">
-    <div class="max-w-6xl mx-auto px-4 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-      <div class="flex items-center gap-2 text-xs sm:text-sm font-medium">
-        <span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-        <span>☀️ <strong>OFERTA DE TEMPORADA:</strong> Envío prioritario + Guía de Bronceado Gratis</span>
-      </div>
-      
-      <!-- Cronómetro -->
-      <div class="flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full border border-amber-400/30">
-        <span class="text-[11px] uppercase tracking-wider text-amber-200">Termina en:</span>
-        <div id="countdown" class="font-mono font-bold text-sm sm:text-base text-amber-300 tracking-widest">
-          02:45:19
-        </div>
+  <!-- BARRA SUPERIOR CON CRONÓMETRO -->
+  <div class="sticky top-0 z-50 bg-morea-ink text-white border-b border-white/10">
+    <div class="max-w-5xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3 text-xs sm:text-sm">
+      <span class="font-medium truncate">☀️ Bronceador de Café Moréa 200 ml • <strong>$64.900</strong></span>
+      <div class="flex items-center gap-2 shrink-0 bg-white/10 px-3 py-1 rounded-full">
+        <span class="text-[11px] uppercase tracking-wider text-amber-200">Promo en:</span>
+        <span id="cronometro" class="font-mono font-bold text-amber-300">01:59:59</span>
       </div>
     </div>
   </div>
 
-  <!-- NAVBAR MINIMALISTA -->
-  <header class="bg-morea-cream/90 backdrop-blur-md border-b border-morea-sand">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center text-white font-serif font-bold text-xl shadow">
-          M
-        </div>
-        <div>
-          <span class="font-serif text-xl font-bold tracking-tight text-morea-coffee block leading-none">Moréa</span>
-          <span class="text-[11px] tracking-widest uppercase text-morea-caramel">By Tatiana López</span>
-        </div>
+  <!-- HEADER SIMPLE -->
+  <header class="bg-morea-bg border-b border-morea-surface">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="font-serif text-lg sm:text-xl font-bold tracking-tight">
+        Moréa—<span class="font-normal italic text-morea-muted">By Tatiana López</span>
       </a>
-
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-morea-caramel">
-        <a href="#beneficios" class="hover:text-morea-gold transition">Beneficios</a>
-        <a href="#ingredientes" class="hover:text-morea-gold transition">6 Aceites</a>
-        <a href="#catalogo" class="hover:text-morea-gold transition">Packs & Precios</a>
-        <a href="#como-usar" class="hover:text-morea-gold transition">Modo de Uso</a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm text-morea-muted">
+        <a href="#producto" class="hover:text-morea-ink">Producto</a>
+        <a href="#ingredientes" class="hover:text-morea-ink">6 Aceites</a>
+        <a href="#esencia" class="hover:text-morea-ink">Esencia</a>
       </nav>
-
-      <a href="#catalogo" class="gold-gradient text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full shadow-md hover:opacity-95 transition">
-        Pedir Ahora
+      <a href="#comprar" class="btn-gold text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-full shadow">
+        COMPRAR AHORA →
       </a>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24">
-    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-      
-      <!-- Columna Texto -->
-      <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
-        <div class="inline-flex items-center gap-2 bg-morea-sand px-4 py-1.5 rounded-full text-xs font-semibold text-morea-amber uppercase tracking-wider">
-          <i class="fa-solid fa-sun"></i> 100% Natural • Aroma a Caramelo & Café
-        </div>
-
-        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-morea-coffee leading-[1.12]">
-          Llega a diciembre con ese <span class="italic text-morea-gold">bronceado dorado</span> que tanto quieres.
+  <!-- 1. HERO (REFERENCIA WEB: BRONCEADO NATURAL CON EL PODER DEL CAFÉ) -->
+  <section class="py-12 sm:py-16 border-b border-morea-surface">
+    <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+      <div class="md:col-span-7 space-y-5">
+        <h1 class="font-serif text-4xl sm:text-5xl font-bold leading-[1.12]">
+          Bronceado natural con el poder del café
         </h1>
-
-        <p class="text-base sm:text-lg text-morea-caramel leading-relaxed max-w-xl mx-auto lg:mx-0">
-          El <strong>Aceite Bronceador de Café Moréa</strong> fusiona <strong>6 aceites botánicos</strong> y Vitamina E para acelerar un tono canela uniforme, hidratar profundamente y dejar tu piel suave y luminosa sin sensación grasosa.
+        <p class="text-lg font-medium text-morea-goldDark">
+          Tu piel, tu esencia.
         </p>
-
-        <!-- Bullets rápidos -->
-        <div class="grid grid-cols-2 gap-3 text-left max-w-md mx-auto lg:mx-0 pt-1">
-          <div class="flex items-center gap-2 text-sm font-medium text-morea-coffee">
-            <i class="fa-solid fa-circle-check text-morea-gold"></i> Bronceado más rápido
-          </div>
-          <div class="flex items-center gap-2 text-sm font-medium text-morea-coffee">
-            <i class="fa-solid fa-circle-check text-morea-gold"></i> Nutrición profunda
-          </div>
-          <div class="flex items-center gap-2 text-sm font-medium text-morea-coffee">
-            <i class="fa-solid fa-circle-check text-morea-gold"></i> Efecto piel luminosa
-          </div>
-          <div class="flex items-center gap-2 text-sm font-medium text-morea-coffee">
-            <i class="fa-solid fa-circle-check text-morea-gold"></i> Aroma irresistible
-          </div>
-        </div>
-
-        <!-- CTA Principal -->
-        <div class="pt-3 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-          <a href="#catalogo" class="w-full sm:w-auto gold-gradient text-white font-bold text-base px-8 py-4 rounded-full shadow-xl hover:scale-[1.02] transition flex items-center justify-center gap-2">
-            <span>QUIERO MI MORÉA AHORA</span>
-            <i class="fa-solid fa-arrow-right"></i>
+        <p class="text-morea-muted text-base leading-relaxed max-w-xl">
+          Un ritual de verano con ingredientes naturales que cuidan, hidratan y realzan tu belleza.
+        </p>
+        <div class="pt-1 flex flex-wrap items-center gap-3">
+          <a href="#comprar" class="btn-gold text-white font-bold text-sm px-7 py-3.5 rounded-full shadow-lg hover:opacity-95 transition">
+            COMPRAR AHORA →
           </a>
-          <a href="https://wa.me/573150087997?text=Hola%20Tatiana%20%E2%98%80%EF%B8%8F%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20pedir%20mi%20Aceite%20Bronceador%20Mor%C3%A9a" target="_blank" class="w-full sm:w-auto bg-white border border-morea-sand text-morea-coffee font-semibold text-sm px-6 py-4 rounded-full hover:bg-morea-sand/50 transition flex items-center justify-center gap-2">
-            <i class="fa-brands fa-whatsapp text-green-600 text-lg"></i>
-            <span>Asesoría por WhatsApp</span>
-          </a>
-        </div>
-
-        <!-- Prueba social rápida -->
-        <div class="pt-2 flex items-center justify-center lg:justify-start gap-3 text-xs text-morea-caramel">
-          <div class="flex text-amber-500">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <span><strong>+150 clientas felices</strong> en Colombia • Envíos a todo el país</span>
+          <button onclick="comprarWS('Bronceador de Café Moréa 200 ml - $64.900')" class="bg-white border border-morea-surface text-morea-ink font-semibold text-sm px-5 py-3.5 rounded-full hover:bg-morea-surface/50 transition">
+            <i class="fa-brands fa-whatsapp text-green-600 mr-1"></i> Pedir directo por WS
+          </button>
         </div>
       </div>
 
-      <!-- Columna Imagen Producto -->
-      <div class="lg:col-span-6 relative">
-        <div class="relative mx-auto max-w-md">
-          <!-- Decoración fondo -->
-          <div class="absolute -inset-4 bg-gradient-to-tr from-amber-300/40 to-orange-200/30 rounded-[2.5rem] blur-2xl"></div>
-          
-          <!-- Tarjeta Imagen Principal (Reemplazar src con tu foto del frasco en la arena/piscina) -->
-          <div class="relative bg-morea-sand rounded-[2rem] p-3 shadow-2xl border border-white">
-            <img 
-              src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&w=900&q=80" 
-              alt="Aceite Bronceador de Café Moréa By Tatiana López" 
-              class="w-full h-[440px] object-cover rounded-[1.5rem]"
-            />
-            
-            <!-- Badge Flotante -->
-            <div class="absolute bottom-7 left-7 right-7 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-lg flex items-center justify-between">
-              <div>
-                <p class="text-[11px] uppercase tracking-wider text-morea-gold font-bold">Fórmula Exclusiva</p>
-                <p class="font-serif font-bold text-morea-coffee text-base">Aceite Bronceador de Café</p>
-              </div>
-              <div class="text-right">
-                <span class="bg-amber-100 text-morea-amber text-xs font-bold px-3 py-1 rounded-full">6 Aceites</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECCIÓN: ¿QUÉ HACE ESPECIAL A MORÉA? -->
-  <section id="beneficios" class="py-16 bg-white border-y border-morea-sand">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-morea-gold">La naturaleza en tu piel</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-morea-coffee mt-2">¿Qué hace especial a Moréa?</h2>
-        <p class="text-morea-caramel mt-3 text-sm sm:text-base">
-          Diseñado para quienes aman el sol pero cuidan su piel. Sin químicos agresivos ni manchas naranjas artificiales.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-morea-cream p-6 rounded-2xl border border-morea-sand hover:shadow-md transition">
-          <div class="w-12 h-12 rounded-xl bg-amber-100 text-morea-amber flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-sun"></i>
-          </div>
-          <h3 class="font-serif font-bold text-lg text-morea-coffee mb-2">Bronceado Natural</h3>
-          <p class="text-sm text-morea-caramel leading-relaxed">Activa la melanina de forma progresiva para lograr un tono canela uniforme y duradero.</p>
-        </div>
-
-        <div class="bg-morea-cream p-6 rounded-2xl border border-morea-sand hover:shadow-md transition">
-          <div class="w-12 h-12 rounded-xl bg-amber-100 text-morea-amber flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-droplet"></i>
-          </div>
-          <h3 class="font-serif font-bold text-lg text-morea-coffee mb-2">Nutrición Profunda</h3>
-          <p class="text-sm text-morea-caramel leading-relaxed">Evita la resequedad y descamación causada por el sol, la piscina o el agua de mar.</p>
-        </div>
-
-        <div class="bg-morea-cream p-6 rounded-2xl border border-morea-sand hover:shadow-md transition">
-          <div class="w-12 h-12 rounded-xl bg-amber-100 text-morea-amber flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-sparkles"></i>
-          </div>
-          <h3 class="font-serif font-bold text-lg text-morea-coffee mb-2">Piel Suave y Luminosa</h3>
-          <p class="text-sm text-morea-caramel leading-relaxed">Deja un destello satinado hermoso en tu piel desde la primera aplicación.</p>
-        </div>
-
-        <div class="bg-morea-cream p-6 rounded-2xl border border-morea-sand hover:shadow-md transition">
-          <div class="w-12 h-12 rounded-xl bg-amber-100 text-morea-amber flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-mug-hot"></i>
-          </div>
-          <h3 class="font-serif font-bold text-lg text-morea-coffee mb-2">Aroma a Café & Caramelo</h3>
-          <p class="text-sm text-morea-caramel leading-relaxed">Una experiencia sensorial deliciosa que convierte tu rutina bajo el sol en un ritual.</p>
+      <div class="md:col-span-5">
+        <div class="bg-morea-surface rounded-3xl p-3 shadow-md">
+          <!-- Reemplaza src por la foto principal del frasco Moréa -->
+          <img
+            src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&w=800&q=80"
+            alt="Bronceador de Café Moréa By Tatiana López"
+            class="w-full h-80 object-cover rounded-2xl"
+          />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN: INGREDIENTES CON PROPÓSITO (6 ACEITES + VITAMINA E) -->
-  <section id="ingredientes" class="py-16 bg-morea-cream">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-morea-gold">Fórmula Botánica</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-morea-coffee mt-2">Ingredientes con Propósito</h2>
-        <p class="text-morea-caramel mt-3 text-sm sm:text-base">
-          La combinación perfecta de <strong>6 aceites naturales</strong> potenciados con Vitamina E.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        <!-- 1. Café -->
-        <div class="bg-white p-5 rounded-2xl text-center border border-morea-sand shadow-sm">
-          <div class="text-3xl mb-2">☕</div>
-          <h4 class="font-serif font-bold text-morea-coffee">Café</h4>
-          <p class="text-xs text-morea-caramel mt-1">Antioxidante natural que tonifica y aporta tono dorado.</p>
-        </div>
-        <!-- 2. Achiote -->
-        <div class="bg-white p-5 rounded-2xl text-center border border-morea-sand shadow-sm">
-          <div class="text-3xl mb-2">🌺</div>
-          <h4 class="font-serif font-bold text-morea-coffee">Achiote</h4>
-          <p class="text-xs text-morea-caramel mt-1">Rico en betacarotenos para acelerar un bronceado intenso.</p>
-        </div>
-        <!-- 3. Cúrcuma -->
-        <div class="bg-white p-5 rounded-2xl text-center border border-morea-sand shadow-sm">
-          <div class="text-3xl mb-2">✨</div>
-          <h4 class="font-serif font-bold text-morea-coffee">Cúrcuma</h4>
-          <p class="text-xs text-morea-caramel mt-1">Aporta luminosidad natural y unifica el tono de la piel.</p>
-        </div>
-        <!-- 4. Coco -->
-        <div class="bg-white p-5 rounded-2xl text-center border border-morea-sand shadow-sm">
-          <div class="text-3xl mb-2">🥥</div>
-          <h4 class="font-serif font-bold text-morea-coffee">Coco</h4>
-          <p class="text-xs text-morea-caramel mt-1">Hidratación extrema y suavidad aterciopelada.</p>
-        </div>
-        <!-- 5. Zanahoria -->
-        <div class="bg-white p-5 rounded-2xl text-center border border-morea-sand shadow-sm">
-          <div class="text-3xl mb-2">🥕</div>
-          <h4 class="font-serif font-bold text-morea-coffee">Zanahoria</h4>
-          <p class="text-xs text-morea-caramel mt-1">Prolonga la duración del bronceado por más semanas.</p>
-        </div>
-        <!-- 6. Girasol + Vitamina E -->
-        <div class="bg-white p-5 rounded-2xl text-center border border-morea-sand shadow-sm">
-          <div class="text-3xl mb-2">🌻</div>
-          <h4 class="font-serif font-bold text-morea-coffee">Girasol & Vit. E</h4>
-          <p class="text-xs text-morea-caramel mt-1">Protege, repara y mantiene la elasticidad de tu piel.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CATÁLOGO WEB DE COMPRA INMEDIATA (3 COMBOS ESTRATÉGICOS) -->
-  <section id="catalogo" class="py-16 bg-morea-sand/60 border-t border-morea-sand">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto mb-6">
-        <span class="bg-morea-coffee text-amber-300 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-          Catálogo Oficial • Compra Rápida por WhatsApp
-        </span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-morea-coffee mt-4">Elige tu Pack Moréa</h2>
-        <p class="text-morea-caramel mt-2 text-sm sm:text-base">
-          Selecciona tu presentación favorita y haz clic para confirmar tu pedido y dirección de envío en segundos.
-        </p>
-      </div>
-
-      <!-- Recordatorio Cronómetro en el Catálogo -->
-      <div class="max-w-md mx-auto mb-10 bg-white border border-amber-300 rounded-2xl p-3 flex items-center justify-center gap-3 shadow-sm">
-        <i class="fa-solid fa-stopwatch text-morea-gold text-xl"></i>
-        <p class="text-xs sm:text-sm text-morea-coffee">
-          Precio promocional válido por: <strong id="countdown-card" class="font-mono text-morea-amber">02:45:19</strong>
-        </p>
-      </div>
-
-      <!-- Grid de 3 Opciones de Compra -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-        
-        <!-- OPCIÓN 1: INDIVIDUAL -->
-        <div class="bg-white rounded-3xl p-6 border border-morea-sand shadow-md flex flex-col justify-between">
-          <div>
-            <div class="relative mb-5">
-              <img 
-                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80" 
-                alt="1 Aceite Bronceador Moréa" 
-                class="w-full h-56 object-cover rounded-2xl"
-              />
-              <span class="absolute top-3 left-3 bg-white/90 text-morea-coffee text-xs font-bold px-3 py-1 rounded-full">
-                Ideal para probar
-              </span>
-            </div>
-            <h3 class="font-serif text-2xl font-bold text-morea-coffee">1x Aceite Bronceador Moréa</h3>
-            <p class="text-xs text-morea-caramel mt-1">Presentación Spray • 6 Aceites + Vitamina E</p>
-            
-            <ul class="mt-4 space-y-2 text-sm text-morea-caramel">
-              <li><i class="fa-solid fa-check text-morea-gold mr-2"></i>1 Frasco Aceite Bronceador de Café</li>
-              <li><i class="fa-solid fa-check text-morea-gold mr-2"></i>Guía digital de tips para bronceado perfecto</li>
-              <li><i class="fa-solid fa-check text-morea-gold mr-2"></i>Envío nacional disponible</li>
-            </ul>
-          </div>
-
-          <div class="mt-6 pt-5 border-t border-morea-sand">
-            <div class="flex items-baseline gap-2 mb-4">
-              <span class="text-xs text-gray-400 line-through">$65.000</span>
-              <span class="text-2xl font-bold text-morea-coffee">Consultar Oferta</span>
-            </div>
-            <button onclick="pedirWhatsApp('1x Aceite Bronceador de Café Moréa (Individual)')" class="w-full bg-morea-coffee hover:bg-morea-caramel text-white font-bold py-3.5 px-4 rounded-xl transition flex items-center justify-center gap-2">
-              <i class="fa-brands fa-whatsapp text-green-400 text-lg"></i>
-              <span>Pedir 1 Unidad por WS</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- OPCIÓN 2: DÚO BRONCEADO PERFECTO (MÁS VENDIDO) -->
-        <div class="bg-white rounded-3xl p-6 border-2 border-morea-gold shadow-2xl relative flex flex-col justify-between transform md:-translate-y-3">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 gold-gradient text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow">
-            🔥 Más Vendido • Envío Gratis
-          </div>
-
-          <div>
-            <div class="relative mb-5 mt-2">
-              <img 
-                src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80" 
-                alt="Dúo Bronceado Perfecto Moréa" 
-                class="w-full h-56 object-cover rounded-2xl"
-              />
-              <span class="absolute top-3 left-3 bg-morea-coffee text-amber-300 text-xs font-bold px-3 py-1 rounded-full">
-                Ahorra + Envío Gratis
-              </span>
-            </div>
-            <h3 class="font-serif text-2xl font-bold text-morea-coffee">Dúo Bronceado de Vacaciones</h3>
-            <p class="text-xs text-morea-caramel mt-1">2x Aceites Bronceadores de Café Moréa</p>
-            
-            <ul class="mt-4 space-y-2 text-sm text-morea-coffee font-medium">
-              <li><i class="fa-solid fa-circle-check text-morea-gold mr-2"></i><strong>2 Frascos</strong> Aceite Bronceador Moréa</li>
-              <li><i class="fa-solid fa-circle-check text-morea-gold mr-2"></i><strong>ENVÍO GRATIS</strong> a ciudades principales</li>
-              <li><i class="fa-solid fa-circle-check text-morea-gold mr-2"></i>Ideal para todo el puente o vacaciones</li>
-              <li><i class="fa-solid fa-circle-check text-morea-gold mr-2"></i>Despacho prioritario hoy mismo</li>
-            </ul>
-          </div>
-
-          <div class="mt-6 pt-5 border-t border-morea-sand">
-            <div class="flex items-baseline gap-2 mb-4">
-              <span class="text-xs text-gray-400 line-through">$130.000</span>
-              <span class="text-2xl font-bold text-morea-amber">Precio Especial Dúo</span>
-            </div>
-            <button onclick="pedirWhatsApp('Pack Dúo (2x Aceites Bronceadores Moréa + Envío Gratis)')" class="w-full gold-gradient hover:opacity-95 text-white font-bold py-4 px-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
-              <i class="fa-brands fa-whatsapp text-white text-xl"></i>
-              <span>¡LO QUIERO! Pedir Dúo</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- OPCIÓN 3: PACK AMIGAS / MAYORISTA -->
-        <div class="bg-white rounded-3xl p-6 border border-morea-sand shadow-md flex flex-col justify-between">
-          <div>
-            <div class="relative mb-5">
-              <img 
-                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" 
-                alt="Pack Amigas 3 Aceites Moréa" 
-                class="w-full h-56 object-cover rounded-2xl"
-              />
-              <span class="absolute top-3 left-3 bg-white/90 text-morea-coffee text-xs font-bold px-3 py-1 rounded-full">
-                Mejor precio por unidad
-              </span>
-            </div>
-            <h3 class="font-serif text-2xl font-bold text-morea-coffee">Pack Amigas / Paseo (3x)</h3>
-            <p class="text-xs text-morea-caramel mt-1">3x Aceites Bronceadores de Café Moréa</p>
-            
-            <ul class="mt-4 space-y-2 text-sm text-morea-caramel">
-              <li><i class="fa-solid fa-check text-morea-gold mr-2"></i><strong>3 Frascos</strong> Aceite Bronceador Moréa</li>
-              <li><i class="fa-solid fa-check text-morea-gold mr-2"></i><strong>ENVÍO GRATIS</strong> incluido</li>
-              <li><i class="fa-solid fa-check text-morea-gold mr-2"></i>Comparte con tus amigas o familia</li>
-            </ul>
-          </div>
-
-          <div class="mt-6 pt-5 border-t border-morea-sand">
-            <div class="flex items-baseline gap-2 mb-4">
-              <span class="text-xs text-gray-400 line-through">$195.000</span>
-              <span class="text-2xl font-bold text-morea-coffee">Descuento Máximo</span>
-            </div>
-            <button onclick="pedirWhatsApp('Pack Amigas (3x Aceites Bronceadores Moréa + Envío Gratis)')" class="w-full bg-morea-coffee hover:bg-morea-caramel text-white font-bold py-3.5 px-4 rounded-xl transition flex items-center justify-center gap-2">
-              <i class="fa-brands fa-whatsapp text-green-400 text-lg"></i>
-              <span>Pedir Pack 3x por WS</span>
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN: TIPS DE USO (BASADO EN HISTORIAS DESTACADAS DE IG) -->
-  <section id="como-usar" class="py-16 bg-white">
+  <!-- 2. PILARES RÁPIDOS + INVIMA -->
+  <section class="py-8 bg-white border-b border-morea-surface">
     <div class="max-w-5xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-morea-gold">Tips Moréa</span>
-        <h2 class="font-serif text-3xl font-bold text-morea-coffee mt-2">¿Cómo lograr el bronceado canela perfecto?</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-sm font-medium">
+        <div class="p-3 rounded-xl bg-morea-bg">♧ Ingredientes de origen natural</div>
+        <div class="p-3 rounded-xl bg-morea-bg">☼ Bronceado dorado y uniforme</div>
+        <div class="p-3 rounded-xl bg-morea-bg">♢ Hidratación profunda</div>
+        <div class="p-3 rounded-xl bg-morea-bg">❧ Apto para todo tipo de piel</div>
+      </div>
+      <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-morea-muted pt-3 border-t border-morea-surface">
+        <span>✓ Información de registro sanitario INVIMA</span>
+        <a href="#comprar" class="font-bold text-morea-goldDark hover:underline">Llévalo hoy por $64.900 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 6 ACEITES NATURALES -->
+  <section id="ingredientes" class="py-12 sm:py-16 border-b border-morea-surface">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <p class="text-xs font-bold uppercase tracking-widest text-morea-goldDark">Una fórmula con</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-1">6 aceites naturales</h2>
+      <p class="text-morea-muted mt-2 max-w-xl mx-auto text-sm sm:text-base">
+        Que nutren tu piel y potencian un bronceado dorado, saludable y duradero.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-8 text-sm font-semibold">
+        <div class="bg-white border border-morea-surface rounded-2xl p-4">Café</div>
+        <div class="bg-white border border-morea-surface rounded-2xl p-4">Cúrcuma</div>
+        <div class="bg-white border border-morea-surface rounded-2xl p-4">Achiote</div>
+        <div class="bg-white border border-morea-surface rounded-2xl p-4">Coco</div>
+        <div class="bg-white border border-morea-surface rounded-2xl p-4">Zanahoria</div>
+        <div class="bg-white border border-morea-surface rounded-2xl p-4">Girasol + Vit. E</div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="text-center p-6">
-          <div class="w-14 h-14 rounded-full bg-morea-sand text-morea-coffee font-serif font-bold text-2xl flex items-center justify-center mx-auto mb-4">1</div>
-          <h4 class="font-serif font-bold text-lg text-morea-coffee mb-2">Exfolia antes de tomar el sol</h4>
-          <p class="text-sm text-morea-caramel">Prepara tu piel un día antes para eliminar células muertas y asegurar un color parejo.</p>
+      <div class="mt-8">
+        <a href="#comprar" class="btn-gold text-white font-bold text-sm px-6 py-3 rounded-full shadow inline-block">
+          PEDIR MI FRASCO AHORA →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BLOQUE PRINCIPAL DE COMPRA (REFERENCIA WEB: NUESTRO PRODUCTO $64.900) -->
+  <section id="producto" class="py-12 sm:py-16 bg-morea-surface/50 border-b border-morea-surface">
+    <div id="comprar" class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+      <div class="md:col-span-5">
+        <div class="bg-white rounded-3xl p-3 shadow-md border border-morea-surface">
+          <!-- Reemplaza src por la foto de detalle del producto 200 ml -->
+          <img
+            src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80"
+            alt="Bronceador de Café Moréa 200 ml"
+            class="w-full h-80 object-cover rounded-2xl"
+          />
         </div>
-        <div class="text-center p-6">
-          <div class="w-14 h-14 rounded-full bg-morea-sand text-morea-coffee font-serif font-bold text-2xl flex items-center justify-center mx-auto mb-4">2</div>
-          <h4 class="font-serif font-bold text-lg text-morea-coffee mb-2">Aplica protector + Moréa</h4>
-          <p class="text-sm text-morea-caramel">Aplica tu protector solar habitual, espera 10 minutos y atomiza Moréa masajeando suavemente.</p>
+      </div>
+
+      <div class="md:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-morea-surface shadow-sm space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-morea-goldDark">Nuestro producto</span>
+          <span class="text-xs font-semibold bg-morea-surface px-3 py-1 rounded-full">200 ml</span>
         </div>
-        <div class="text-center p-6">
-          <div class="w-14 h-14 rounded-full bg-morea-sand text-morea-coffee font-serif font-bold text-2xl flex items-center justify-center mx-auto mb-4">3</div>
-          <h4 class="font-serif font-bold text-lg text-morea-coffee mb-2">Sol suave e hidratación</h4>
-          <p class="text-sm text-morea-caramel">Toma el sol en horas recomendadas (antes de las 10 a.m. o después de las 3 p.m.) e hidrata al finalizar.</p>
+
+        <h2 class="font-serif text-3xl font-bold">Bronceador de Café Moréa</h2>
+
+        <p class="text-sm text-morea-muted leading-relaxed">
+          Descubre el secreto de una piel radiante con Moréa, nuestro aceite bronceador natural de café. Fórmula con aceites de café, cúrcuma, achiote, coco, zanahoria, girasol y vitamina E para nutrir, hidratar y suavizar tu piel mientras realzas su tono dorado natural.
+        </p>
+
+        <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-morea-surface">
+          <div>
+            <span class="text-xs text-morea-muted block">Precio oficial</span>
+            <span class="text-3xl font-bold text-morea-ink">$ 64.900</span>
+          </div>
+
+          <button
+            onclick="comprarWS('Bronceador de Café Moréa (200 ml) — $64.900')"
+            class="btn-gold text-white font-bold text-sm px-7 py-4 rounded-full shadow-lg hover:opacity-95 transition flex items-center justify-center gap-2"
+          >
+            <span>COMPRAR AHORA</span>
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+          </button>
         </div>
+
+        <div class="grid grid-cols-3 gap-2 pt-2 text-center text-xs text-morea-muted">
+          <div class="bg-morea-bg p-2.5 rounded-xl">♧ Envíos a toda Colombia</div>
+          <div class="bg-morea-bg p-2.5 rounded-xl">▤ Pagos seguros y confiables</div>
+          <div class="bg-morea-bg p-2.5 rounded-xl">♢ Compra fácil y rápida</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. NUESTRA ESENCIA + CIERRE -->
+  <section id="esencia" class="py-12 sm:py-16 text-center">
+    <div class="max-w-3xl mx-auto px-4 space-y-4">
+      <p class="text-xs font-bold uppercase tracking-widest text-morea-goldDark">Nuestra esencia</p>
+      <p class="italic font-serif text-lg text-morea-muted">
+        «Más que un bronceador, es la esencia de la naturaleza en tu piel»
+      </p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold">
+        Más que un bronceador, es la esencia de la naturaleza en tu piel.
+      </h2>
+      <div class="pt-3">
+        <button
+          onclick="comprarWS('Quiero pedir mi Bronceador de Café Moréa ($64.900)')"
+          class="btn-gold text-white font-bold text-sm px-8 py-4 rounded-full shadow-lg hover:opacity-95 transition"
+        >
+          DESCUBRE MORÉA Y PIDE POR WS →
+        </button>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-morea-coffee text-morea-sand py-12">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+  <footer class="bg-morea-ink text-white py-8">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
       <div>
-        <h3 class="font-serif text-2xl font-bold text-white">Moréa <span class="text-sm font-normal text-amber-300">By Tatiana López</span></h3>
-        <p class="text-xs text-morea-sand/80 mt-1">Aceite Bronceador de Café • 6 Aceites Naturales & Vitamina E • Envíos a toda Colombia</p>
+        <span class="font-serif text-base font-bold">Moréa</span>
+        <span class="text-white/70 ml-2">By Tatiana López</span>
       </div>
-
-      <div class="flex items-center gap-4">
-        <a href="https://www.instagram.com/moreabytatiana/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-morea-gold flex items-center justify-center text-white transition">
-          <i class="fa-brands fa-instagram text-lg"></i>
-        </a>
-        <a href="https://wa.me/573150087997" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-green-600 flex items-center justify-center text-white transition">
-          <i class="fa-brands fa-whatsapp text-lg"></i>
-        </a>
+      <div class="flex items-center gap-5 text-white/80">
+        <a href="https://www.instagram.com/moreabytatiana/" target="_blank" class="hover:text-amber-300">Instagram</a>
+        <a href="https://morea.com.co/" target="_blank" class="hover:text-amber-300">Web Oficial</a>
+        <a href="https://wa.me/573150087997" target="_blank" class="hover:text-amber-300">WhatsApp</a>
       </div>
-    </div>
-    <div class="max-w-6xl mx-auto px-4 mt-8 pt-6 border-t border-white/10 text-center text-xs text-morea-sand/60">
-      © 2026 Moréa By Tatiana López. Todos los derechos reservados.
+      <span class="text-white/60">© 2026 Moréa. Todos los derechos reservados.</span>
     </div>
   </footer>
 
-  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-  <a 
-    href="https://wa.me/573150087997?text=Hola%20Tatiana%20%E2%98%80%EF%B8%8F%2C%20quiero%20aprovechar%20la%20oferta%20del%20Aceite%20Bronceador%20Mor%C3%A9a" 
-    target="_blank" 
+  <!-- BOTÓN FLOTANTE WS -->
+  <button
+    onclick="comprarWS('Bronceador de Café Moréa (200 ml) — $64.900')"
     aria-label="Comprar por WhatsApp"
-    class="fixed bottom-5 right-5 z-50 bg-[#25D366] text-white px-5 py-3.5 rounded-full shadow-2xl flex items-center gap-2.5 font-bold text-sm pulse-ws hover:scale-105 transition"
+    class="fixed bottom-5 right-5 z-50 bg-[#25D366] text-white px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 font-bold text-xs sm:text-sm hover:scale-105 transition"
   >
-    <i class="fa-brands fa-whatsapp text-2xl"></i>
-    <span class="hidden sm:inline">Comprar por WhatsApp</span>
-  </a>
+    <i class="fa-brands fa-whatsapp text-xl"></i>
+    <span>Comprar $64.900</span>
+  </button>
 
-  <!-- JAVASCRIPT: CRONÓMETRO + MENSAJE PERSONALIZADO A WHATSAPP -->
   <script>
-    // 1. Función para redirigir a WhatsApp con el pack seleccionado
-    function pedirWhatsApp(packSeleccionado) {
-      const telefono = "573150087997";
-      const mensaje = `¡Hola Tatiana! ☀️ Vengo del catálogo web de *Moréa* y quiero aprovechar la promo antes de que termine el reloj.\n\n✨ *Pedido:* ${packSeleccionado}\n📍 *Mi ciudad de envío es:* `;
-      const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-      window.open(url, '_blank');
+    const WS_NUMBER = "573150087997";
+
+    function comprarWS(detalle) {
+      const texto = `Hola ✨ Quiero comprar: ${detalle}. ¿Me confirmas disponibilidad y envío a mi ciudad?`;
+      window.open(`https://wa.me/${WS_NUMBER}?text=${encodeURIComponent(texto)}`, "_blank");
     }
 
-    // 2. Cronómetro de urgencia (2 horas 45 minutos persistente en sesión)
-    function iniciarCronometro() {
-      const STORAGE_KEY = 'morea_promo_end';
-      let endTime = sessionStorage.getItem(STORAGE_KEY);
-
-      if (!endTime) {
-        // 2 horas, 45 minutos y 19 segundos desde que entra el usuario
-        const duracionMs = ((2 * 60 + 45) * 60 + 19) * 1000;
-        endTime = Date.now() + duracionMs;
-        sessionStorage.setItem(STORAGE_KEY, endTime);
+    // Cronómetro persistente de 2 horas
+    (function iniciarTimer() {
+      const KEY = "morea_timer_v1";
+      let target = Number(sessionStorage.getItem(KEY));
+      if (!target || target <= Date.now()) {
+        target = Date.now() + (2 * 60 * 60 * 1000);
+        sessionStorage.setItem(KEY, String(target));
       }
-
-      function actualizarReloj() {
-        const ahora = Date.now();
-        let restante = Math.max(0, endTime - ahora);
-
-        if (restante === 0) {
-          // Reinicia ciclo si llega a 0 para mantener oferta activa
-          endTime = Date.now() + (2 * 60 * 60 * 1000);
-          sessionStorage.setItem(STORAGE_KEY, endTime);
-          restante = endTime - ahora;
-        }
-
-        const horas = Math.floor(restante / (1000 * 60 * 60));
-        const minutos = Math.floor((restante % (1000 * 60 * 60)) / (1000 * 60));
-        const segundos = Math.floor((restante % (1000 * 60)) / 1000);
-
-        const formato = 
-          String(horas).padStart(2, '0') + ':' +
-          String(minutos).padStart(2, '0') + ':' +
-          String(segundos).padStart(2, '0');
-
-        const elTop = document.getElementById('countdown');
-        const elCard = document.getElementById('countdown-card');
-        if (elTop) elTop.textContent = formato;
-        if (elCard) elCard.textContent = formato;
+      const el = document.getElementById("cronometro");
+      function tick() {
+        const diff = Math.max(0, target - Date.now());
+        const h = String(Math.floor(diff / 3600000)).padStart(2, "0");
+        const m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, "0");
+        const s = String(Math.floor((diff % 60000) / 1000)).padStart(2, "0");
+        if (el) el.textContent = `${h}:${m}:${s}`;
       }
-
-      actualizarReloj();
-      setInterval(actualizarReloj, 1000);
-    }
-
-    document.addEventListener('DOMContentLoaded', iniciarCronometro);
+      tick();
+      setInterval(tick, 1000);
+    })();
   </script>
 </body>
 </html>
